@@ -1,6 +1,6 @@
 #!/usr/bin/env python2.7
 
-def estimate_price(theta0, theta1, mileage):
+def	estimate_price(theta0, theta1, mileage):
 	return (theta0 + (theta1 * mileage))
 
 def	sigmatheta0(theta0, theta1, mileage, price, m):
