@@ -7,9 +7,7 @@ theta0 = 0.0
 theta1 = 0.0
 tmptheta0 = 0.0
 tmptheta1 = 0.0
-sigmatheta0 = 0.0
-sigmatheta1 = 0.0
-learningrate = 0.0000001
+learningrate = 0.0001
 
 price = []
 mileage = []
@@ -25,10 +23,11 @@ with open('data.csv') as f:
 mileage = map(float, mileage)
 price = map(float, price)
 
-m = float(len(mileage))
+m = len(mileage) - 1
 
-for i in range(0, 20):
-	tmptheta0 = learningrate * (sigmatheta0(theta0, theta1, mileage, price, m) / m)
-	tmptheta1 = learningrate * (sigmatheta1(theta0, theta1, mileage, price, m) / m)
+for i in range(0, 10):
+    # print(type(m))
+    tmptheta0 = learningrate * (sigmatheta0(theta0, theta1, mileage, price, m) / float(m))
+    tmptheta1 = learningrate * (sigmatheta1(theta0,theta1, mileage, price, m) / float(m))
 
 print (tmptheta0, tmptheta1)
