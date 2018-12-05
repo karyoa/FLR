@@ -7,7 +7,7 @@ theta0 = 0.0
 theta1 = 0.0
 tmptheta0 = 0.0
 tmptheta1 = 0.0
-learningrate = 0.0001
+learningrate = 0.000001
 
 price = []
 mileage = []
@@ -25,9 +25,13 @@ price = map(float, price)
 
 m = len(mileage) - 1
 
-for i in range(0, 10):
+while True:
     # print(type(m))
     tmptheta0 = learningrate * (sigmatheta0(theta0, theta1, mileage, price, m) / float(m))
-    tmptheta1 = learningrate * (sigmatheta1(theta0,theta1, mileage, price, m) / float(m))
+    tmptheta1 = learningrate * (sigmatheta1(theta0, theta1, mileage, price, m) / float(m))
 
-print (tmptheta0, tmptheta1)
+    theta0 -= tmptheta0
+    theta1 -= tmptheta1
+    print (theta0, theta1)
+
+print ('The End')
