@@ -26,21 +26,22 @@ m = len(mileage)
 for i in range(0, m):
 	mileage[i] /= 1000
 
+for i in range(0, m):
+	price[i] /= 1000
+
 # for i in range(0, m):
 # 	print (i, mileage[i])
 
 while True:
 	pretheta0 = theta0
+	pretheta1 = theta1
 
 	tmptheta0 = (learningrate * (sigmatheta0(theta0, theta1, mileage, price, m) / float(m)))
 	tmptheta1 = (learningrate * (sigmatheta1(theta0, theta1, mileage, price, m) / float(m)))
 
 	theta0 -= tmptheta0
 	theta1 -= tmptheta1
-	print (tmptheta0, tmptheta1)
-	if (pretheta0 == theta0):
+	print (theta0, theta1)
+	# print (tmptheta0, tmptheta1)
+	if (pretheta0 == theta0 and pretheta1 == theta1):
 		break
-
-print ('Les Thetas')
-print (theta0, theta1)
-print ('The End')

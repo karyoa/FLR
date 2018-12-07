@@ -14,3 +14,6 @@ def	sigmatheta1(theta0, theta1, mileage, price, m):
 	for i in range(0, m):
 		res += (estimate_price(theta0, theta1, mileage[i]) - price[i]) * mileage[i]
 	return (res)
+
+# def write_thetas(theta0, theta1):
+#
