@@ -15,5 +15,7 @@ def	sigmatheta1(theta0, theta1, mileage, price, m):
 		res += (estimate_price(theta0, theta1, mileage[i]) - price[i]) * mileage[i]
 	return (res)
 
-# def write_thetas(theta0, theta1):
-#
+def write_thetas(theta0, theta1):
+	with open('thetas.csv', 'w') as f:
+		f.write('theta0,theta1\n' + repr(theta0) + ',' + repr(theta1))
+		f.close()

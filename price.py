@@ -5,11 +5,12 @@ from utils import estimate_price
 
 theta0 = 0
 theta1 = 0
-with open('theta.csv') as f:
+with open('thetas.csv', 'r') as f:
 	readCSV = csv.reader(f)
 	for row in readCSV:
 		tmp1 = row[0]
 		tmp2 = row[1]
+	f.close()
 theta0 = float(tmp1)
 theta1 = float(tmp2)
 mileage = 0.0
